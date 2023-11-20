@@ -1,0 +1,36 @@
+﻿@model List<pic6.Models.Purchase>
+
+
+
+<h2>List of Purchases</h2>
+<p>
+    <a asp-action="Create">Create New</a> <!-- Ссылка для создания новой записи -->
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Department ID</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var purchase in Model)
+        {
+        <tr>
+            <td>@purchase.Id</td>
+            <td>@purchase.Item</td>
+            <td>@purchase.Price</td>
+            <td>@purchase.DepartmentId</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@purchase.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@purchase.Id">Delete</a> <!-- Ссылки для редактирования и удаления -->
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

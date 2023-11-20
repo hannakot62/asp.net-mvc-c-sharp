@@ -1,0 +1,23 @@
+﻿@model Purchase  
+
+<h2>Create Purchase</h2>
+
+<form asp-action="Create">
+    <!-- Форма для создания новой покупки -->
+    <div class="form-group">
+        <label asp-for="Item"></label>
+        <input asp-for="Item" class="form-control" />
+        <span asp-validation-for="Item" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DepartmentId"></label>
+        <input asp-for="DepartmentId" class="form-control" />
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button> <!-- Кнопка для создания записи -->
+</form>

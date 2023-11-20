@@ -1,0 +1,25 @@
+﻿@model Purchase 
+
+<h2>Edit Purchase</h2>
+
+<form asp-action="Edit">
+    <!-- Форма для редактирования покупки -->
+    <input type="hidden" asp-for="Id" /> <!-- Скрытое поле для передачи Id покупки -->
+
+    <div class="form-group">
+        <label asp-for="Item"></label>
+        <input asp-for="Item" class="form-control" />
+        <span asp-validation-for="Item" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DepartmentId"></label>
+        <input asp-for="DepartmentId" class="form-control" />
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button> <!-- Кнопка для обновления записи -->
+</form>
